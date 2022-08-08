@@ -1,4 +1,5 @@
-const btn = document.querySelector('#store-btn')
+const btn = document.querySelector('#store-btn');
+const container = document.querySelector('#contain');
 
 let myLibrary = [];
 
@@ -13,8 +14,12 @@ function addBookToLibrary(book) {
 
 //button event listener
 //bring up a form with: author, title
+//let form-input call Book function
+//link to addBookToLibrary function
 
 
 btn.addEventListener('click', function() {
-    alert("hey!");
+    const div = document.createElement('div');
+    div.textContent = prompt("What is your name?");
+    container.appendChild("div");
 })
