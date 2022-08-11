@@ -15,11 +15,7 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-  //book1 = new Book("Sam", "Wunderkind");
-  //book2 = new Book("Bob", "Magic Boy");
-  //addBookToLibrary(book1);
-  //addBookToLibrary(book2);
-
+//loop through library  
 function loopLibrary() {
   for (let book of myLibrary) {
     console.log(book.title + ", by " + book.author);
