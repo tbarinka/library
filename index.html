@@ -10,19 +10,23 @@
 <body>
     <container id="#contain">
         <h1>Library</h1>
-        <button id="store-btn">+ New Book</button>
+        <button id="btn">Add New Book</button>
         <div id="library-store"></div>
 
-        <form action="#" method="post">
+        <fieldset>
+            <legend>Enter Book Info</legend>
+
             <p>
                 <label for="author">Author: </label>
-                <input type="text" id="author">
+                <input type="text" id="author" required>
             </p>
             <p>
                 <label for="title">Title: </label>
-                <input type="text" id="title">
+                <input type="text" id="title" required>
             </p>
-        </form>
+            <input type="submit" value="Submit" id="submit-btn">
+        </fieldset>
+
 
     </container>
 
