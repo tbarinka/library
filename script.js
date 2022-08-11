@@ -3,14 +3,31 @@ const container = document.querySelector('#contain');
 
 let myLibrary = [];
 
-function Book(name, author) {
-  this.name = name
+//Book Constructor
+
+function Book(author, title) {
   this.author = author
+  this.title = title
 }
 
+//function adds book to myLibrary array
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
+
+  //book1 = new Book("Sam", "Wunderkind");
+  //book2 = new Book("Bob", "Magic Boy");
+  //addBookToLibrary(book1);
+  //addBookToLibrary(book2);
+
+function loopLibrary() {
+  for (let book of myLibrary) {
+    console.log(book.title + ", by " + book.author);
+  }
+}
+
+//loop through myLibrary
+
 
 //button event listener
 //bring up a form with: author, title
