@@ -4,7 +4,7 @@ const container = document.querySelector('#contain');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const library = document.querySelector('.library-books');
-const form = document.getElementById('form');
+const form = document.getElementById('formContainer');
 const libShelf = document.getElementById('lib');
 
 let myLibrary = [];
@@ -27,7 +27,7 @@ function addBookToLibrary(book) {
   libShelf.appendChild(newBook);
 
   const removeBtn = document.createElement('button');
-  removeBtn.textContent = "Remove.";
+  removeBtn.textContent = "Remove";
   removeBtn.addEventListener('click', (event) => {
     libShelf.removeChild(newBook);
     index = myLibrary.findIndex(x => x.title === book.title);
@@ -42,11 +42,9 @@ function Book(author, title) {
   this.title = title
   addBookToLibrary(this);
 }
-
 //loop through library  
 function loopLibrary() {
   for (let book of myLibrary) {
-    
     const newBook = document.createElement('div');
       newBook.style.border = "solid black";
       newBook.style.padding = "10px";
@@ -55,12 +53,8 @@ function loopLibrary() {
       newBook.style.height = "40px";
       newBook.textContent = book.title + ", " + book.author;
     libShelf.appendChild(newBook);
-
-    
-
   }
 };  
-
 //event listener for button that passes form contents to Book constructor
 submitBtn.addEventListener('click', (event) => {
   let a = author.value;
