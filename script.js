@@ -25,6 +25,13 @@ function addBookToLibrary(book) {
   newBook.style.width = "20%";
   newBook.textContent = book.title + ", " + book.author;
   libShelf.appendChild(newBook);
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = "Remove.";
+  removeBtn.addEventListener('click', (event) => {
+    libShelf.removeChild(newBook);
+  });
+  newBook.appendChild(removeBtn);
 }
 //Book Constructor
 function Book(author, title) {
@@ -38,12 +45,14 @@ function loopLibrary() {
   for (let book of myLibrary) {
     
     const newBook = document.createElement('div');
-    newBook.style.border = "solid black";
-    newBook.style.padding = "10px";
-    newBook.style.margin = "5px";
-    newBook.style.width = "20%";
-    newBook.textContent = book.title + ", " + book.author;
+      newBook.style.border = "solid black";
+      newBook.style.padding = "10px";
+      newBook.style.margin = "5px";
+      newBook.style.width = "20%";
+      newBook.style.height = "40px";
+      newBook.textContent = book.title + ", " + book.author;
     libShelf.appendChild(newBook);
+
     //create a div
     //add book info to div
     //append div to libShelf
