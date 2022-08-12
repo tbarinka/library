@@ -9,15 +9,22 @@ const libShelf = document.getElementById('lib');
 
 let myLibrary = [];
 book1 = new Book("Sam", "Magic Boy");
-book2 = new Book("Tony", "Pizza Party");
-book3 = new Book("Bobby", "Santa's Holidy");
-book4 = new Book("Mario", "Spaghetti Surprise");
-book5 = new Book("Alison", "Bacon Bits");
-book6 = new Book("Vivian", "Monkey Supreme");
+//book2 = new Book("Tony", "Pizza Party");
+//book3 = new Book("Bobby", "Santa's Holidy");
+//book4 = new Book("Mario", "Spaghetti Surprise");
+//book5 = new Book("Alison", "Bacon Bits");
+//book6 = new Book("Vivian", "Monkey Supreme");
 
 //function adds book to myLibrary array
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  const newBook = document.createElement('div');
+  newBook.style.border = "solid black";
+  newBook.style.padding = "10px";
+  newBook.style.margin = "5px";
+  newBook.style.width = "20%";
+  newBook.textContent = book.title + ", " + book.author;
+  libShelf.appendChild(newBook);
 }
 //Book Constructor
 function Book(author, title) {
@@ -29,6 +36,7 @@ function Book(author, title) {
 //loop through library  
 function loopLibrary() {
   for (let book of myLibrary) {
+    
     const newBook = document.createElement('div');
     newBook.style.border = "solid black";
     newBook.style.padding = "10px";
@@ -41,7 +49,7 @@ function loopLibrary() {
     //append div to libShelf
 
   }
-};   loopLibrary();
+};  
 
 //event listener for button that passes form contents to Book constructor
 submitBtn.addEventListener('click', (event) => {
