@@ -9,9 +9,9 @@ const libShelf = document.getElementById('lib');
 
 let myLibrary = [];
 book1 = new Book("Sam", "Magic Boy");
-//book2 = new Book("Tony", "Pizza Party");
-//book3 = new Book("Bobby", "Santa's Holidy");
-//book4 = new Book("Mario", "Spaghetti Surprise");
+book2 = new Book("Tony", "Pizza Party");
+book3 = new Book("Bobby", "Santa's Holidy");
+book4 = new Book("Mario", "Spaghetti Surprise");
 //book5 = new Book("Alison", "Bacon Bits");
 //book6 = new Book("Vivian", "Monkey Supreme");
 
@@ -30,6 +30,9 @@ function addBookToLibrary(book) {
   removeBtn.textContent = "Remove.";
   removeBtn.addEventListener('click', (event) => {
     libShelf.removeChild(newBook);
+    index = myLibrary.findIndex(x => x.title === book.title);
+    myLibrary.splice(index, 1);
+
   });
   newBook.appendChild(removeBtn);
 }
@@ -53,9 +56,7 @@ function loopLibrary() {
       newBook.textContent = book.title + ", " + book.author;
     libShelf.appendChild(newBook);
 
-    //create a div
-    //add book info to div
-    //append div to libShelf
+    
 
   }
 };  
