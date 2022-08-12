@@ -10,6 +10,10 @@ const libShelf = document.getElementById('lib');
 let myLibrary = [];
 book1 = new Book("Sam", "Magic Boy");
 book2 = new Book("Tony", "Pizza Party");
+book3 = new Book("Bobby", "Santa's Holidy");
+book4 = new Book("Mario", "Spaghetti Surprise");
+book5 = new Book("Alison", "Bacon Bits");
+book6 = new Book("Vivian", "Monkey Supreme");
 
 //function adds book to myLibrary array
 function addBookToLibrary(book) {
@@ -26,6 +30,10 @@ function Book(author, title) {
 function loopLibrary() {
   for (let book of myLibrary) {
     const newBook = document.createElement('div');
+    newBook.style.border = "solid black";
+    newBook.style.padding = "10px";
+    newBook.style.margin = "5px";
+    newBook.style.width = "20%";
     newBook.textContent = book.title + ", " + book.author;
     libShelf.appendChild(newBook);
     //create a div
