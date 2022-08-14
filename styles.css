@@ -78,3 +78,28 @@ h1 {
     font-size: 20px;
     border-radius:10px;
 }
+
+#formContainer {
+    background-color: white;
+    height: 350px;
+    width: auto;
+    border: solid black;
+    border-width: thick;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+fieldset {
+    width: 350px;
+    height: 300px;
+}
+legend {
+    color: black
+    font-size: 100px;
+}
+label {
+    color: black;
+    font-size: 20px;
+}
