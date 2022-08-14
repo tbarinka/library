@@ -20,15 +20,11 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   const newBook = document.createElement('div');
   newBook.classList.add("book")
-  newBook.style.padding = "10px";
-  newBook.style.margin = "5px";
-  newBook.style.width = "20%";
-  newBook.textContent = book.title + ", " + book.author;
-  newBook.style.display = "flex";
-  newBook.style.flexDirection = "column";
+  newBook.textContent = "\"" + book.title + "\", by " + book.author;
   libShelf.appendChild(newBook);
 
   const removeBtn = document.createElement('button');
+  removeBtn.classList.add("removeBtn");
   removeBtn.textContent = "Remove";
   removeBtn.addEventListener('click', (event) => {
     libShelf.removeChild(newBook);
