@@ -20,8 +20,18 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   const newBook = document.createElement('div');
   newBook.classList.add("book")
-  newBook.textContent = "\"" + book.title + "\", by " + book.author;
+  //newBook.textContent = "\"" + book.title + "\", by " + book.author;
   libShelf.appendChild(newBook);
+
+  const bookTitle = document.createElement('div');
+    bookTitle.classList.add("bookTitle");
+    bookTitle.textContent = book.title;
+    newBook.appendChild(bookTitle);
+
+  const bookAuthor = document.createElement('div');
+  bookAuthor.classList.add("bookAuthor");
+  bookAuthor.textContent = book.author;
+  newBook.appendChild(bookAuthor);
 
   const removeBtn = document.createElement('button');
   removeBtn.classList.add("removeBtn");
@@ -33,6 +43,7 @@ function addBookToLibrary(book) {
 
   });
   newBook.appendChild(removeBtn);
+
 }
 //Book Constructor
 function Book(author, title) {
