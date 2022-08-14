@@ -19,11 +19,13 @@ book4 = new Book("Mario", "Spaghetti Surprise");
 function addBookToLibrary(book) {
   myLibrary.push(book);
   const newBook = document.createElement('div');
-  newBook.style.border = "solid black";
+  newBook.classList.add("book")
   newBook.style.padding = "10px";
   newBook.style.margin = "5px";
   newBook.style.width = "20%";
   newBook.textContent = book.title + ", " + book.author;
+  newBook.style.display = "flex";
+  newBook.style.flexDirection = "column";
   libShelf.appendChild(newBook);
 
   const removeBtn = document.createElement('button');
