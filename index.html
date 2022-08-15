@@ -16,17 +16,21 @@
         <div id="formContainer">
             <fieldset id="form">
                 <legend>Enter Book Info</legend>
-            <form action="#">
+                <form> 
                 <p>
                     <label for="author">*Author: </label>
-                    <input type="text" id="author" maxlength="30" required>
+                    <input type="text" name="author" id="author" maxlength="30" required>
                 </p>
                 <p>
                     <label for="title">*Title: </label>
-                    <input type="text" id="title" maxlength="25" required>
+                    <input type="text" name="title" id="title" maxlength="25" required>
+                </p>
+                <p>
+                    <label for="read">Read: </label>
+                    <input type="checkbox" id="read" name="read" value="read">
                 </p>
                 <input type="submit" id="submit-btn">
-            </form>
+                </form>
             </fieldset>
         </div>
         <div id="lib" class="lib">

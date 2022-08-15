@@ -72,9 +72,9 @@ h1 {
 .bookAuthor {
     font-size: 20px;
 }
-.removeBtn {
-    height: 40px;
-    width: 100px;
+.removeBtn, .readBook {
+    height: 45px;
+    width: 115px;
     font-size: 20px;
     border-radius:10px;
 }

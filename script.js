@@ -1,19 +1,28 @@
 const addBtn = document.querySelector('#btn');
 const submitBtn = document.querySelector('#submit-btn');
 const container = document.querySelector('#contain');
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
 const library = document.querySelector('.library-books');
 const form = document.getElementById('formContainer');
 const libShelf = document.getElementById('lib');
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+const read = document.querySelector('#read');
 
 let myLibrary = [];
-book1 = new Book("Sam", "Magic Boy");
-book2 = new Book("Tony", "Pizza Party");
-book3 = new Book("Bobby", "Santa's Holidy");
-book4 = new Book("Mario", "Spaghetti Surprise");
+book1 = new Book("Sam", "Magic Boy", false);
+book2 = new Book("Tony", "Pizza Party", true);
+//book3 = new Book("Bobby", "Santa's Holidy");
+//book4 = new Book("Mario", "Spaghetti Surprise");
 //book5 = new Book("Alison", "Bacon Bits");
 //book6 = new Book("Vivian", "Monkey Supreme");
+
+//Book Constructor
+function Book(author, title, rd) {
+  this.author = author
+  this.title = title
+  this.rd = rd
+  addBookToLibrary(this);
+}
 
 //function adds book to myLibrary array
 function addBookToLibrary(book) {
@@ -33,6 +42,19 @@ function addBookToLibrary(book) {
   bookAuthor.textContent = book.author;
   newBook.appendChild(bookAuthor);
 
+  const readBook = document.createElement('button');
+  readBook.classList.add("readBook");
+  if (book.rd == true) {
+    readBook.textContent = "Read";
+    readBook.style.backgroundColor = "#3b82f6";
+    readBook.style.color = "white";
+  } else if (book.rd == false) {
+    readBook.textContent = "Not Read";
+    readBook.style.backgroundColor = "black";
+    readBook.style.color = "white";
+  }
+  newBook.appendChild(readBook);
+
   const removeBtn = document.createElement('button');
   removeBtn.classList.add("removeBtn");
   removeBtn.textContent = "Remove";
@@ -45,12 +67,7 @@ function addBookToLibrary(book) {
   newBook.appendChild(removeBtn);
 
 }
-//Book Constructor
-function Book(author, title) {
-  this.author = author
-  this.title = title
-  addBookToLibrary(this);
-}
+
 //loop through library  
 function loopLibrary() {
   for (let book of myLibrary) {
@@ -68,11 +85,12 @@ function loopLibrary() {
 submitBtn.addEventListener('click', (event) => {
   let a = author.value;
   let t = title.value;
+  let r = read.checked;
 
   if (author.value == "" || title.value == "") {
     return
   } else {
-    new Book(a, t);
+    new Book(a, t, r);
     author.value = "";
     title.value = "";
     form.style.display = 'none';
