@@ -71,6 +71,10 @@ submitBtn.addEventListener('click', (event) => {
 
   if (author.value == "" || title.value == "") {
     return
+  } else if (a.length > 25) {
+    alert("Author must be less than 25 characters.");
+  } else if (t.length > 25) {
+    alert("Title must be less than 25 characters.")
   } else {
     new Book(a, t);
     author.value = "";
