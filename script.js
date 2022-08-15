@@ -68,10 +68,15 @@ function loopLibrary() {
 submitBtn.addEventListener('click', (event) => {
   let a = author.value;
   let t = title.value;
-  new Book(a, t);
-  author.value = "";
-  title.value = "";
-  form.style.display = 'none';
+
+  if (author.value == "" || title.value == "") {
+    return
+  } else {
+    new Book(a, t);
+    author.value = "";
+    title.value = "";
+    form.style.display = 'none';
+  }
 });
 
 //event listener for button to make form appear & disappear for submission
