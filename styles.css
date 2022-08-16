@@ -64,6 +64,7 @@ h1 {
     margin: 5px;
     padding: 10px;
     gap: 10px;
+    word-break: break-all;
 }
 
 .bookTitle {

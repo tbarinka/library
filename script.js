@@ -9,12 +9,7 @@ const author = document.querySelector('#author');
 const read = document.querySelector('#read');
 
 let myLibrary = [];
-book1 = new Book("Sam", "Magic Boy", false);
-book2 = new Book("Tony", "Pizza Party", true);
-book3 = new Book("Bobby", "Santa's Holidy", true);
-book4 = new Book("Mario", "Spaghetti Surprise", false);
-book5 = new Book("Alison", "Bacon Bits", false);
-book6 = new Book("Vivian", "Monkey Supreme", true);
+book1 = new Book("Sample Author", "Sample Book Title", false);
 
 //Book Constructor
 function Book(author, title, rd) {
