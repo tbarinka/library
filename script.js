@@ -11,10 +11,10 @@ const read = document.querySelector('#read');
 let myLibrary = [];
 book1 = new Book("Sam", "Magic Boy", false);
 book2 = new Book("Tony", "Pizza Party", true);
-//book3 = new Book("Bobby", "Santa's Holidy");
-//book4 = new Book("Mario", "Spaghetti Surprise");
-//book5 = new Book("Alison", "Bacon Bits");
-//book6 = new Book("Vivian", "Monkey Supreme");
+book3 = new Book("Bobby", "Santa's Holidy", true);
+book4 = new Book("Mario", "Spaghetti Surprise", false);
+book5 = new Book("Alison", "Bacon Bits", false);
+book6 = new Book("Vivian", "Monkey Supreme", true);
 
 //Book Constructor
 function Book(author, title, rd) {
@@ -48,11 +48,24 @@ function addBookToLibrary(book) {
     readBook.textContent = "Read";
     readBook.style.backgroundColor = "#3b82f6";
     readBook.style.color = "white";
+    
   } else if (book.rd == false) {
     readBook.textContent = "Not Read";
     readBook.style.backgroundColor = "black";
     readBook.style.color = "white";
   }
+  readBook.addEventListener('click', (event) => {
+    if (readBook.textContent == "Not Read") {
+      readBook.textContent = "Read";
+      readBook.style.backgroundColor = "#3b82f6";
+      readBook.style.color = "white";
+    } else if (readBook.textContent == "Read") {
+      readBook.textContent = "Not Read";
+      readBook.style.backgroundColor = "black";
+      readBook.style.color = "white";
+    }
+});
+
   newBook.appendChild(readBook);
 
   const removeBtn = document.createElement('button');
