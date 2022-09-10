@@ -8,20 +8,24 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const read = document.querySelector('#read');
 
+//Book Class Constructor
+class Book {
+  constructor(author, title, rd) {
+    this.author = author
+    this.title = title
+    this.rd = rd;
+    addBookToLibrary(this);
+  }
+
+}
+//establish library array 
 let myLibrary = [];
 book1 = new Book("Sample Author", "Sample Book Title", false);
-
-//Book Constructor
-function Book(author, title, rd) {
-  this.author = author
-  this.title = title
-  this.rd = rd
-  addBookToLibrary(this);
-}
 
 //function adds book to myLibrary array
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  
   const newBook = document.createElement('div');
   newBook.classList.add("book")
   //newBook.textContent = "\"" + book.title + "\", by " + book.author;
